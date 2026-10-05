@@ -97,16 +97,11 @@
 				document.getElementById("fetch-2plus2-result").innerHTML = responseText + " ("+fetch2plus2Counter+")"
 			}
 
-			async function addTwoIntegers() {
-				const x = document.getElementById("x-value").value
-				const y = document.getElementById("y-value").value
-
-				// Note the URL (fetch) string will look something like '/add-two-integers?x=2&y=1' when it is sent.
+			async function rollDie() {
 				const url = document.getElementById("urlInput").value
-				const fetchString = url+"/add-two-integers?x="+x+"&y="+y
-				const response = await fetch(fetchString)
+				const response = await fetch(url + "/roll-die")
 				const responseText = await response.text()
-				document.getElementById("sum").value = responseText
+				document.getElementById("die-result").value = responseText
 			}
 
 			async function calculateBMI() {
